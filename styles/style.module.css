@@ -1,0 +1,13 @@
+nav ul.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul.menu li{
+    margin-left: 20px;
+}
+
+nav ul.menu li.active{
+    color: red;
+}
