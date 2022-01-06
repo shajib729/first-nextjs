@@ -1,7 +1,7 @@
 {
     "theme_color": "#000000",
     "background_color": "#388ef2",
-    "display": "browser",
+    "display": "fullscreen",
     "scope": "/",
     "start_url": "/",
     "name": "My First Next JS PWA Website",
