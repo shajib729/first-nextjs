@@ -52,9 +52,8 @@ const Blog = ({ data, numberOfPosts }) => {
         <InfiniteScroll
           dataLength={posts.length}
           next={getMorePosts}
-          loader={hasMore && <h3>Loading...</h3>}
-          endMessage={<h3>End Here...</h3>}
-          hasMore={true}
+          hasMore={hasMore}
+          loader={<h3>Loading...</h3>}
         >
         {
           posts.map((e) => (
