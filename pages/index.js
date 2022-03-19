@@ -8,7 +8,6 @@ function index() {
         <Head>
           <title>Home Page</title>
         </Head>
-        <Nav />
         <div style={{textAlign:"center"}}>
         <h1>This  is Home Page</h1>
         <Image src="https://images.unsplash.com/photo-1641305286305-9f267722fd0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Faveicon" width="600px" height="400px" />
@@ -27,4 +26,11 @@ function index() {
     )
   }
   
+  export async function getServerSideProps() {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 500)
+    })
+    return { props: {} }
+  }
+
 export default index

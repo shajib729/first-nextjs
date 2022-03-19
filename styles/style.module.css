@@ -8,6 +8,6 @@ nav ul.menu li{
     margin-left: 20px;
 }
 
-nav ul.menu li.active{
+nav ul.menu li.active a{
     color: red;
 }

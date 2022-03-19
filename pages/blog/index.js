@@ -5,8 +5,11 @@ import { useEffect,useState } from "react"
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Link from "next/link"
 
+export const getServerSideProps = async () => {  
+  await new Promise((resolve) => {
+    setTimeout(resolve, 700)
+  })
 
-export const getStaticProps =async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10")
   const data = await res.json()
 
@@ -43,8 +46,6 @@ const Blog = ({ data, numberOfPosts }) => {
       <Head>
         <title>Blog Page</title>
       </Head>
-      
-        <Nav />
         
         <div className={styles.blogs}>
         <h1>Blog Page!</h1>
@@ -69,6 +70,6 @@ const Blog = ({ data, numberOfPosts }) => {
         </div>
       </>
     )
-  }
+}
   
 export default Blog

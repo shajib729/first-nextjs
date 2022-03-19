@@ -1,26 +1,25 @@
 import { useRouter, } from 'next/router';
 import { useEffect, useState } from 'react';
 import Nav from '../../components/Nav';
-
-const Blogid = () => {
-  const router = useRouter()
-  const id = router.query.id
   
-  const [post,setPost]=useState({})
+export async function getServerSideProps(context) {
+  console.log({context:'Hello'});
+  await new Promise((resolve) => {
+    setTimeout(resolve, 700)
+  })
+  const id = context.params.id
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  const data = await res.json()
 
-  const loadPost = async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    const data = await res.json()
-    setPost(data);
-  }
+  return { props: {data} }
+}
   
-  useEffect(() => {
-    id && loadPost()
-  },[id])
+
+const Blogid = ({data}) => {  
+  const [post, setPost] = useState(data)
 
     return (
       <>
-        <Nav />
         {
           post.id && post.title ? (
           <div className="post">
@@ -40,6 +39,5 @@ const Blogid = () => {
         </style>
       </>
     )
-  }
-  
+}
 export default Blogid

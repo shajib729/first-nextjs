@@ -7,11 +7,17 @@ const Contact=()=>{
         <Head>
           <title>Contact Page</title>
         </Head>
-      
-        <Nav/>
+
         <h1>Hello Contact!</h1>
       </div>
     )
-  }
+}
+  
+export async function getServerSideProps() {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 500)
+  })
+  return { props: {} }
+}
   
 export default Contact
