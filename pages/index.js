@@ -28,7 +28,7 @@ function index() {
   
   export async function getServerSideProps() {
     await new Promise((resolve) => {
-      setTimeout(resolve, 700)
+      setTimeout(resolve, 1000)
     })
     return { props: {} }
   }
