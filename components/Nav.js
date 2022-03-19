@@ -6,7 +6,6 @@ import {useEffect, useState} from 'react'
 
 function Nav() {
   const router = useRouter()
-  const [pathroute, setPathroute]=useState()
 
   useEffect(() => {
     

@@ -1,4 +1,3 @@
-import Nav from "../../components/Nav"
 import Head from "next/head"
 import styles from './blog.module.css'
 import { useEffect,useState } from "react"

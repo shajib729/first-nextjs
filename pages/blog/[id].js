@@ -5,7 +5,7 @@ import Nav from '../../components/Nav';
 export async function getServerSideProps(context) {
   console.log({context:'Hello'});
   await new Promise((resolve) => {
-    setTimeout(resolve, 700)
+    setTimeout(resolve, 1000)
   })
   const id = context.params.id
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
